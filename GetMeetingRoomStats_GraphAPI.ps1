@@ -68,7 +68,7 @@ The script gathers and exports the following stats for each meeting room for the
     The script prints to the screen the stats for each meeting room, and exports them to a CSV file in the same location of the script.
  
 .LINK
-    Online version: https://gallery.technet.microsoft.com/scriptcenter/Exchange-Online-Meeting-4894b38f
+    Online version: https://github.com/NunoFilipeMota/PublicScripts/blob/main/GetMeetingRoomStats_GraphAPI.ps1
  
 .EXAMPLE
 C:\PS> .\Get-MeetingRoomStats_GraphAPI.ps1 -All -From "01/01/2020" -To "01/02/2020"
