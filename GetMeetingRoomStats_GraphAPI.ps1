@@ -16,7 +16,7 @@ Although the script is targeted at meeting rooms, it will work with any mailbox 
 IMPORTANT:
     - To analyze a particular meeting room, specify one or more primary SMTP addresses in the format: 'room1@domain.com, room2@domain.com'. Alternatively, analyze all meeting rooms by using the "-All" switch;
     - You will need to have, or create, an 'app registration' in Azure and create a 'client secret';
-    - The app registration will need the following API permissions to Graph API: 'User.Read.All' and 'Calendars.Read', both of type 'Application';
+    - The app registration will need the following API permissions to Graph API: 'User.Read.All', 'Calendars.Read', and 'Place.Read.All', all of type 'Application';
     - Maximum range to search is 1825 days (5 years);
     - You can enter the dates in the format "22/02/2020", "22/02/2020 15:00", or in ISO 8601 format such as "2020-02-22T15:00:00", or even "2020-02-22T15:00:00-08:00" to specify an offset to UTC (time zone).
  
@@ -49,7 +49,7 @@ The script gathers and exports the following stats for each meeting room for the
     You can enter the dates in the format "22/02/2020", "22/02/2020 15:00", or in ISO 8601 format such as "2020-02-22T15:00:00", or even "2020-02-22T15:00:00-08:00" to specify an offset to UTC (time zone).
  
 .PARAMETER All
-    When using this switch, the first 100 rooms in the tenant are retrieved and analyzed. This is a current limitation of the 'findRooms' Graph API method, and it is not related to paging;
+    When using this switch, the scripts retrieves all the rooms in the tenant using the "list places" method (as oposed to using "findRooms" as in a previous version of the script;
  
 .PARAMETER RoomListSMTP
     The SMTP address of one or more meeting rooms to process.
