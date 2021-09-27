@@ -320,7 +320,7 @@ If ($RoomListSMTP) {
 If ($All) {
     # Retrieve all meeting rooms from the tenant
     # $allRooms = Query-GraphAPI -URI "https://graph.microsoft.com/beta/users/$user/findRooms" -Token $token
-    $allRooms = Query-GraphAPI -URI "https://graph.microsoft.com/beta/places/microsoft.graph.room" -Token $token
+    $allRooms = Query-GraphAPI -URI "https://graph.microsoft.com/beta/places/microsoft.graph.room?top=999" -Token $token
     Write-Log -Type "INF" -Message "Retrieved $(($allRooms | Measure).Count) Meeting Rooms"
     If (!$allRooms) {Exit}
 }
