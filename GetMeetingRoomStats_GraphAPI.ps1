@@ -4,6 +4,8 @@
 # Date:     December 2020
 # Version:  0.1 - 20200224 - First draft
 #           0.2 - 20201231 - Updated to use "list places" instead of findRoom (https://docs.microsoft.com/en-us/graph/api/place-list?view=graph-rest-beta&tabs=http)
+#           0.3 - 20210927 - Updated to query URI to retrieve the details of more than 100 meeting rooms
+
  
 <#
 .SYNOPSIS
