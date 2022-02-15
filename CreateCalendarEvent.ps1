@@ -1,9 +1,9 @@
-# Script:	CreateCalendarEvent.ps1
-# Purpose:	Create a calendar event on users' Exchange Online mailboxes
-# Author:	Nuno Mota
-# Date:		February 2022
-# Version:	1.0 - 202202 - First release
-#			1.1 - 202202 - Updated notes about Hybrid environments
+# Script:  CreateCalendarEvent.ps1
+# Purpose: Create a calendar event on users' Exchange Online mailboxes
+# Author:  Nuno Mota
+# Date:    February 2022
+# Version: 1.0 - 202202 - First release
+#          1.1 - 202202 - Updated notes about Hybrid environments
 
 <#
 .SYNOPSIS
