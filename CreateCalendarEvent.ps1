@@ -3,6 +3,7 @@
 # Author:   Nuno Mota
 # Date:     February 2022
 # Version:  1.0 - 202202 - First release
+#			1.1 - 202202 - Updated notes about Hybrid environments
 
 <#
 .SYNOPSIS
@@ -21,6 +22,7 @@ IMPORTANT:
 		- Create Event: https://docs.microsoft.com/en-us/graph/api/user-post-events?view=graph-rest-1.0&tabs=http
 	- Whenever the script successfully creates an event on a user's mailbox, it saves the user's SMTP/UPN to a file named 'CreateCalendarEvent_Processed.txt'. This is so the file can be used to re-run the script for any remaining users (in case of a timeout or any other issues).
 	- The script is slow... When I ran it for 37000+ users, it took approximately 1 second per user. Need to look into JSON batching (https://docs.microsoft.com/en-us/graph/json-batching).
+	- The script will throw errors in an Hybrid environment with mailboxes on-prem (as they are returned by Get-MgUser). If this is your case, you might want to use an Exchange Online cmdlet instead of Get-MgUser (or get all your mailboxes and then use the -UsersFile parameter).
  
 .PARAMETER UsersFile
     TXT file containing the email addresses or UPNs of the mailboxes to create a calendar event on.
