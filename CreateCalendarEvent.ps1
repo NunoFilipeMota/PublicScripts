@@ -223,7 +223,7 @@ ForEach ($user in $users) {
 
 	# JSON for the meeting invite
 	$params = @{
-		Subject = "Culture Day"
+		Subject = "Event Subject"
 		Body = @{
 			ContentType = "HTML"
 			Content = $eventBody
