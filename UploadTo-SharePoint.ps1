@@ -123,7 +123,7 @@ Function UploadToSharePoint {
                     # Shrink the output array to the number of bytes
                     $output = New-Object -TypeName Byte[] -ArgumentList $bytesRead
                     [Array]::Copy($buffer, $output, $bytesRead)
-                    Write-Host "no more data" -ForegroundColor Yellow
+                    # Write-Host "no more data" -ForegroundColor Yellow
                 }
 
                 # Upload the chunk
