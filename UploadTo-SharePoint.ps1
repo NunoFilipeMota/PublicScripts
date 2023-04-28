@@ -75,7 +75,6 @@ Function UploadToSharePoint {
         }
         
         If ($file.length/1MB -lt 249) {
-            
             $fileInBytes = [System.IO.File]::ReadAllBytes($file)
             $fileLength = $fileInBytes.Length
             
