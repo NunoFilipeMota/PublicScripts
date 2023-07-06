@@ -14,6 +14,7 @@ This script:
 
 Requirements:
     - Create a variable named "Monitor-AzureADGroupChanges-SearchFrom" as a string with a date in the following format: "MM/dd/yyyy HH:mm:ss"
+    - Update with your Azure App Reg details, plus the 'AutomationAccountName' and 'ResourceGroupName' parameters used in the script;
     - PowerShell modules: Microsoft.Graph.Authentication, Microsoft.Graph.Reports, Az.Accounts, and Az.Automation
 
 Author: Nuno Mota
@@ -238,7 +239,7 @@ ConnectAzure
 
 # Get the date and time we need to run our search from
 Try {
-    $searchFrom = (Get-AzAutomationVariable -Name "Monitor-AzureADGroupChanges-SearchFrom" -AutomationAccountName "AZU-BSL-COLLAB-PROD-AUTOMATIONACCOUNT" -ResourceGroupName "AZU-BSL-COLLAB-RG-PROD" -ErrorAction Stop).Value
+    $searchFrom = (Get-AzAutomationVariable -Name "Monitor-AzureADGroupChanges-SearchFrom" -AutomationAccountName "AZU-(...)" -ResourceGroupName "AZU-(...)" -ErrorAction Stop).Value
     Write-Log -Type "INF" -Message "Searching Audit Logs from  '$searchFrom'"
     Write-Output $searchFrom
     $searchFrom = (Get-Date $searchFrom).ToString("yyyy-MM-ddTHH:mm:ssZ")
@@ -283,7 +284,7 @@ If ($logEntries) {
 
 # Update 'Monitor-AzureADGroupChanges-SearchFrom' variable to current date/time so next time the script runs, it only searches from this point forward
 Try {
-    Set-AzAutomationVariable -Name "Monitor-AzureADGroupChanges-SearchFrom" -AutomationAccountName "AZU-BSL-COLLAB-PROD-AUTOMATIONACCOUNT" -ResourceGroupName "AZU-BSL-COLLAB-RG-PROD" -Value $newSearchFrom -Encrypted $False -ErrorAction Stop
+    Set-AzAutomationVariable -Name "Monitor-AzureADGroupChanges-SearchFrom" -AutomationAccountName "AZU-(...)" -ResourceGroupName "AZU-(...)" -Value $newSearchFrom -Encrypted $False -ErrorAction Stop
     Write-Log -Type "INF" -Message "Variable 'Monitor-AzureADGroupChanges-SearchFrom' updated to '$newSearchFrom'"
 } Catch {
     Write-Log -Type "ERR" -Message "Unable to update 'Monitor-AzureADGroupChanges-SearchFrom' variable to '$newSearchFrom': '$($_.Exception.Message)'"
