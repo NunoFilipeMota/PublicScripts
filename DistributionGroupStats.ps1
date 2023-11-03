@@ -32,7 +32,7 @@ IMPORTANT:
 	5. Any deleted DGs (after the script has run at least once) are deleted from the specified SharePoint List.
  
 .LINK
-    Online version: 
+    Online version: https://github.com/NunoFilipeMota/PublicScripts/blob/main/DistributionGroupStats.ps1
  
 .EXAMPLE
 C:\PS> .\DistributionGroupStats.ps1
